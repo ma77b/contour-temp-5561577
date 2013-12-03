@@ -49,11 +49,13 @@
 
 <script>
 jQuery.getJSON('http://freegeoip.net/json/?callback=?', function(location) {
-  if( location.country_code != "US"){
+  if( location.country_code != "country_code"){
     $('#hidePrice').hide();
     $('#hideBuy').hide();
     $('.price').hide();
     $('.sold-out').hide();
+    $('#cart-link').hide();
+    $('#shoppingCart').hide();
   }
 });
 </script>
@@ -313,7 +315,7 @@ new Shopify.OptionSelectors("product-select", { product: {{ product | json }}, o
   {% endif %}
   
   {% endif %}
- 
+
  
 </script>
 </body>
