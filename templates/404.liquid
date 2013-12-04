@@ -1,6 +1,11 @@
 <div id="not_found" class="row">
-  <div class="span12 expanded-message">
-    <h2>Page not found</h2>
-    <span class="subtext">Sorry, we couldn't find this page.</span>
-  </div> <!-- /.span12 -->
+  {% if settings.index_page_content != empty %}
+  <div class="row">
+    <div class="span12">
+      <div class="page-content">
+        {{ pages[settings.index_page_content].content }}
+      </div>
+    </div> <!-- /.span12 -->
+  </div> <!-- /.row -->
+  {% endif %}
 </div> <!-- /#not_found.row -->
